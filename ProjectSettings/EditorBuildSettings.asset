@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/NewFuckTrees.unity
+    guid: 98afe9409617a7d4d950a296c3975ae0
   m_configObjects: {}

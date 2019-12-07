@@ -11,11 +11,16 @@ public class TreeDecay : MonoBehaviour
 
     public bool isGowing = false;
 
-    float rand = Random.Range(3f, 60f);
-    
+    float rand;
+
+    SphereCollider sCol;
+
+
     void Start()
     {
-        
+        sCol = GetComponent<SphereCollider>();
+
+        rand = Random.Range(3f, 60f);
         Invoke("TreeFall", rand);
         //print(rand);
 
@@ -37,6 +42,7 @@ public class TreeDecay : MonoBehaviour
             //isfallen = false;
             Invoke("DestroyTree", 0);
             tree.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            sCol.radius = 30;
         }
 
         if (tree.transform.position.y < 0)
@@ -46,6 +52,7 @@ public class TreeDecay : MonoBehaviour
 
         if (isGowing)
         {
+            sCol.radius = 4;
             Invoke("GrowTree",0);
             isGowing = false;
         }

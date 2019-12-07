@@ -17,7 +17,7 @@ public class RaycastClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             //Debug.Log("MouseDown");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
