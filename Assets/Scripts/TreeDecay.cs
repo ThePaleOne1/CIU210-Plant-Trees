@@ -10,23 +10,25 @@ public class TreeDecay : MonoBehaviour
     public bool isfallen = false;
 
     public bool isGowing = false;
-    // Start is called before the first frame update
+
+    float rand = Random.Range(3f, 60f);
+    
     void Start()
     {
-        float rand = Random.Range(3f, 60f);
+        
         Invoke("TreeFall", rand);
-        print(rand);
+        //print(rand);
 
         tree.SetActive(true);
         stump.SetActive(false);
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         if (isfallen && tree.active == true)
         {
-            tree.transform.RotateAround(Vector3.forward, Vector3.forward, 5);
+            tree.transform.RotateAroundLocal(Vector3.forward, 0.05f);
         }
         
 
@@ -68,6 +70,7 @@ public class TreeDecay : MonoBehaviour
         tree.SetActive(true);
         stump.SetActive(false);
         tree.transform.position = new Vector3(tree.transform.position.x,-10, tree.transform.position.z);
+        Invoke("TreeFall", rand);
     }
 
 }

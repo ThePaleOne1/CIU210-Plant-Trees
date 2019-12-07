@@ -25,10 +25,10 @@ public class RaycastClick : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Tree")
                 {
-                    print("Found Tree");
+                    //print("Found Tree");
                     if (hit.collider.GetComponent<TreeDecay>().isfallen)
                     {
-                        print("Is has fallen");
+                        //print("It has fallen");
                         hit.collider.GetComponent<TreeDecay>().isGowing = true;
                     }
                 }
